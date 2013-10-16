@@ -119,13 +119,15 @@
 
 <script language="JavaScript" type="text/javascript">
 	
-		/*
+
+		<?php 
+				/*
 	
 			$_SESSION['tk_username'] 
 			2：用户名或密码错误
 		
 		*/
-		<?php if(isset($_SESSION['tk_username']) && $_SESSION['tk_username'] == ""){ ?>
+		if(isset($_SESSION['tk_username']) && $_SESSION['tk_username'] == ""){ ?>
 			document.getElementById("myerror-message").style.display="block";
 			document.getElementById("myerror-message").innerHTML="用户名或密码错误";
 		<?php
