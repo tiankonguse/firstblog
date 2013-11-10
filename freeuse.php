@@ -7,12 +7,12 @@
 	<?php include_once("class/mySQLClass.php"); ?>
 	<title>tiankonguse~freeuse</title>
 </head>
-<body > 
-<div id="wrapper-out" class="wrapper-out" >
+<body>
+	<div id="wrapper-out" class="wrapper-out">
 	<?php include_once("wrapper-top.php"); ?>
-	<div id="wrapper-in" class="wrapper-in" >
-		<div id="wrapper-in-content" class="wrapper-in-content" >
-<pre>
+	<div id="wrapper-in" class="wrapper-in">
+			<div id="wrapper-in-content" class="wrapper-in-content">
+				<pre>
 			免责声明
     
 1、任何使用本站（指 tiankonguse个人网站 http://www.tiankonguse.com，下同）服务的用户均应仔细阅读本声明。
@@ -30,10 +30,10 @@
 
 tiankonguse个人网站 http://www.tiankonguse.com
 </pre>
-		</div>
+			</div>
 		<?php include_once("wrapper-in-right.php"); ?>
 		<div class="clear"></div>
-	</div>
+		</div>
 	<?php include_once("wrapper-footer.php"); ?>
 </div>
 

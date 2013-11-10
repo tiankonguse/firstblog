@@ -1,7 +1,6 @@
 
 <?php
-
-class Blog{
+class Blog {
 	var $key = "";
 	var $user;
 	var $datetime;
@@ -9,117 +8,91 @@ class Blog{
 	var $content;
 	var $password = "";
 	var $category = "";
-	
-	function Blog($key = ""){
-		if($key != ""){
-			$this->setBlog($key);
+	function Blog($key = "") {
+		if ($key != "") {
+			$this->setBlog ( $key );
 		}
 	}
-	
-	function getKey(){
+	function getKey() {
 		return $this->key;
 	}
-	
-	function getUser(){
+	function getUser() {
 		return $this->user;
 	}
-	
-	function getDatetime(){
+	function getDatetime() {
 		return $this->datetime;
 	}
-	
-	function getTitle(){
+	function getTitle() {
 		return $this->title;
 	}
-	
-	function getContent(){
+	function getContent() {
 		return $this->content;
 	}
-	
-	function getPassword(){
+	function getPassword() {
 		return $this->password;
 	}
-	
-	function getCategory(){
+	function getCategory() {
 		return $this->category;
 	}
-	
-	function setBlog($key){
-		$mysql = new MySQL();
-		$mysql->Connect();
-		$mysql->Query("select * from tk_blog where tk_blog_key = '".writeToDatabase($key)."'");
+	function setBlog($key) {
+		$mysql = new MySQL ();
+		$mysql->Connect ();
+		$mysql->Query ( "select * from tk_blog where tk_blog_key = '" . writeToDatabase ( $key ) . "'" );
 		
-		if($row = $mysql->Fetch()){
-			$this->key      = $row['tk_blog_key'];
-			$this->user     = $row['tk_blog_user'];
-			$this->datetime = $row['tk_blog_datetime'];
-			$this->title    = $row['tk_blog_title'];
-			$this->content  = $row['tk_blog_content'];
-			$this->password = $row['tk_blog_password'];
-			$this->category = $row['tk_blog_category'];
+		if ($row = $mysql->Fetch ()) {
+			$this->key = $row ['tk_blog_key'];
+			$this->user = $row ['tk_blog_user'];
+			$this->datetime = $row ['tk_blog_datetime'];
+			$this->title = $row ['tk_blog_title'];
+			$this->content = $row ['tk_blog_content'];
+			$this->password = $row ['tk_blog_password'];
+			$this->category = $row ['tk_blog_category'];
 		}
 		
-		$mysql->Close();
+		$mysql->Close ();
 	}
-	
-	function setKey($key){
+	function setKey($key) {
 		$this->key = $key;
 	}
-	
-	function setUser($user){
+	function setUser($user) {
 		$this->user = $user;
 	}
-	
-	function setDatetime($datetime){
+	function setDatetime($datetime) {
 		$this->datetime = $datetime;
 	}
-	
-	function setTitle($title){
+	function setTitle($title) {
 		$this->title = $title;
 	}
-	
-	function setContent($content){
+	function setContent($content) {
 		$this->content = $content;
 	}
-	
-	function setPassword($password){
+	function setPassword($password) {
 		$this->password = $password;
 	}
-	
-	function setCategory($category){
+	function setCategory($category) {
 		$this->category = $category;
 	}
-	
-	function create(){
+	function create() {
+		$this->setKey ( $this->user . time () );
+		$this->setDatetime ( date ( "Y-m-d H:i:s" ) );
 		
-	
-		$this->setKey($this->user.time());
-		$this->setDatetime(date("Y-m-d H:i:s"));
-
-		$mysql = new MySQL();
-		$mysql->Connect();
-
-		$sql = "INSERT INTO tk_blog (tk_blog_key,tk_blog_user,tk_blog_datetime,tk_blog_title,tk_blog_content,tk_blog_password,tk_blog_category) VALUES ('".writeToDatabase($this->key)."', '".writeToDatabase($this->user)."', '".writeToDatabase($this->datetime)."','".writeToDatabase($this->title)."','".writeToDatabase($this->content)."','".writeToDatabase($this->password)."','".writeToDatabase($this->category)."')";
-		$mysql->Insert($sql);
+		$mysql = new MySQL ();
+		$mysql->Connect ();
 		
-		//echo $sql;
+		$sql = "INSERT INTO tk_blog (tk_blog_key,tk_blog_user,tk_blog_datetime,tk_blog_title,tk_blog_content,tk_blog_password,tk_blog_category) VALUES ('" . writeToDatabase ( $this->key ) . "', '" . writeToDatabase ( $this->user ) . "', '" . writeToDatabase ( $this->datetime ) . "','" . writeToDatabase ( $this->title ) . "','" . writeToDatabase ( $this->content ) . "','" . writeToDatabase ( $this->password ) . "','" . writeToDatabase ( $this->category ) . "')";
+		$mysql->Insert ( $sql );
 		
-		$mysql->Close();
+		// echo $sql;
 		
+		$mysql->Close ();
 	}
-
-	function update(){
-		$mysql = new MySQL();
-		$mysql->Connect();
-		$sql = "UPDATE tk_blog  set tk_blog_user = '".writeToDatabase($this->user)."', tk_blog_datetime = '".writeToDatabase($this->datetime)."', tk_blog_title = '".writeToDatabase($this->title)."', tk_blog_content = '".writeToDatabase($this->content)."', tk_blog_password = '".writeToDatabase($this->password)."', tk_blog_category = '".writeToDatabase($this->category)."' WHERE tk_blog_key = '".writeToDatabase($this->key)."'";
-		$mysql->Update($sql);
-		$mysql->Close();
+	function update() {
+		$mysql = new MySQL ();
+		$mysql->Connect ();
+		$sql = "UPDATE tk_blog  set tk_blog_user = '" . writeToDatabase ( $this->user ) . "', tk_blog_datetime = '" . writeToDatabase ( $this->datetime ) . "', tk_blog_title = '" . writeToDatabase ( $this->title ) . "', tk_blog_content = '" . writeToDatabase ( $this->content ) . "', tk_blog_password = '" . writeToDatabase ( $this->password ) . "', tk_blog_category = '" . writeToDatabase ( $this->category ) . "' WHERE tk_blog_key = '" . writeToDatabase ( $this->key ) . "'";
+		$mysql->Update ( $sql );
+		$mysql->Close ();
 	}
-	
 }
-
-
-
-
 
 ?>

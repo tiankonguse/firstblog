@@ -22,10 +22,6 @@
 
 <body > 
 
-<div id="mytest" class="mytest" >
-
-</div>
-
 <div id="wrapper-out" class="wrapper-out" >
 
 	<?php include_once("wrapper-top.php"); ?>

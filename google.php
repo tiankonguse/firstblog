@@ -1,36 +1,37 @@
- <!DOCTYPE HTML>
+
+<!DOCTYPE HTML>
 <?php session_start(); ?>
 <html>
 
 <head>
-	<?php include_once("head-meta.php"); ?>
+	<?php include_once("./inc/head-meta.php"); ?>
 	<?php include_once("./plug_in/highlight.php"); ?>
 	<?php include_once("./plug_in/databaseHelp.php"); ?>
 	<?php include_once("./class/mySQLClass.php"); ?>
 	<title>tiankonguse~tools</title>
-	<link rel="stylesheet" type="text/css" href="/css/tools.css" />
+<link rel="stylesheet" type="text/css" href="/css/tools.css" />
 
 </head>
-<body > 
+<body>
 
-<div id="wrapper-out" class="wrapper-out" >
+	<div id="wrapper-out" class="wrapper-out">
 
 	<?php include_once("./wrapper-top.php"); ?>
 	
-	<div id="wrapper-in" class="wrapper-in" >
-		<div id="wrapper-in-content" class="wrapper-in-content" >
-			<div id="cse" style="margin-right:20px;margin-left:20px;">Loading</div>
-		</div>
+	<div id="wrapper-in" class="wrapper-in">
+			<div id="wrapper-in-content" class="wrapper-in-content">
+				<div id="cse" style="margin-right: 20px; margin-left: 20px;">Loading</div>
+			</div>
 		<?php include_once("./wrapper-in-right.php"); ?>
 		<div class="clear"></div>
-	</div>
+		</div>
 
 	<?php include_once("./wrapper-footer.php"); ?>
 	
 </div>
 
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript"> 
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
   google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.V2_DEFAULT});
   google.setOnLoadCallback(function() {
     var customSearchOptions = {};
@@ -53,7 +54,7 @@
     customSearchControl.draw('cse', options);
   }, true);
 </script>
-<script type="text/javascript">
+	<script type="text/javascript">
 
 </script>
 </body>

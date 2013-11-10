@@ -1,13 +1,13 @@
 
- 
- <div id="wrapper-footer" class="wrapper-footer" >
+
+<div id="wrapper-footer" class="wrapper-footer">
 	Copyright ©2013 tiankonguse
-	 <p>
-	e-mail:i@tiankonguse.com <a href="freeuse.php">免责声明</a>
+	<p>
+		e-mail:i@tiankonguse.com <a href="freeuse.php">免责声明</a>
 	</p>
-	
+
 	<div class="clear"></div>
- </div>
+</div>
 
 <script type="text/javascript">	
 	$(document).ready(function(){

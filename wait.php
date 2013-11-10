@@ -1,21 +1,21 @@
 
 <div class="progress-bar-wait-out">
 	<div class="progress-bar-wait-in">
-	  <div class="progress-bar-container">
-		<div class="progress-bar-content">
-		  <h1>tiankonguse博客正在努力加载中</h1>
-		</div>		
-		<!-- Progress bar -->
-		<div id="progress_bar" class="ui-progress-bar ui-container">
-		  <div class="ui-progress" style = "width: 0%;">
-			<span class="ui-label" ><b class="value">0%</b></span>
-		  </div>
+		<div class="progress-bar-container">
+			<div class="progress-bar-content">
+				<h1>tiankonguse博客正在努力加载中</h1>
+			</div>
+			<!-- Progress bar -->
+			<div id="progress_bar" class="ui-progress-bar ui-container">
+				<div class="ui-progress" style="width: 0%;">
+					<span class="ui-label"><b class="value">0%</b></span>
+				</div>
+			</div>
+
 		</div>
-		
-	  </div>
 	</div>
 </div>
-<script  language="javascript">
+<script>
 (function( $ ){
   $.fn.animateProgress = function(option) {    
     return this.each(function() {
@@ -59,4 +59,4 @@ function beginWait(newurl){
 
 
 
-</script> 
+</script>

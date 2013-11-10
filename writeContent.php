@@ -1,12 +1,12 @@
 ﻿
 <?php
-	session_start();
-	if(!isset($_SESSION['tk_username']) || $_SESSION['tk_username'] == ""){	
-		echo "<script language=\"javascript\" type=\"text/javascript\">";
-		echo "location.href=\"/\"";
-		echo "</script>";
-	}else{
-?>
+session_start ();
+if (! isset ( $_SESSION ['tk_username'] ) || $_SESSION ['tk_username'] == "") {
+	echo "<script language=\"javascript\" type=\"text/javascript\">";
+	echo "location.href=\"/\"";
+	echo "</script>";
+} else {
+	?>
 
 <!DOCTYPE HTML>
 <html>
@@ -24,27 +24,30 @@
 
 </head>
 
-	
-<body> 
 
-<div id="wrapper-out" class="wrapper-out" >
+<body>
+
+	<div id="wrapper-out" class="wrapper-out">
 
 
 	<?php  include_once("wrapper-top.php"); ?>
 
 
-	<div id="wrapper-in" class="wrapper-in" >
-		
-		<div id="wrapper-in-content" class="wrapper-in-content" >
-			<iframe id="wrapper-content"  class="wrapper-content-ifram" scrolling="no" allowtransparency="yes" frameborder="no" src="plug_in/blog-edite/blog-edite.php<?php if(isset($_GET['blogid']) && $_GET['blogid'] != ""){ echo "?blogid=".$_GET['blogid']; } ?>"> </iframe>
-		</div>
+	<div id="wrapper-in" class="wrapper-in">
+
+			<div id="wrapper-in-content" class="wrapper-in-content">
+				<iframe id="wrapper-content" class="wrapper-content-ifram"
+					scrolling="no" allowtransparency="yes" frameborder="no"
+					src="plug_in/blog-edite/blog-edite.php<?php if(isset($_GET['blogid']) && $_GET['blogid'] != ""){ echo "?blogid=".$_GET['blogid']; } ?>">
+				</iframe>
+			</div>
 		
 		<?php  include_once("wrapper-in-right.php"); ?>
 	</div>
 	
 	<?php  include_once("wrapper-footer.php"); ?>
 </div>
-<script language="javascript">
+	<script >
     
     var $ifram_wrapper_content = jQuery("#wrapper-content");
 

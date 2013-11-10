@@ -1,5 +1,5 @@
 
-<script language="javascript">
+<script>
 //shBrushXml
 jQuery(document).ready(function(){
     var codeArray = [];

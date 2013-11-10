@@ -3,7 +3,9 @@
 <meta name="Author" content="tiankonguse">
 <meta name="description" content="tiankonguse'blog">
 
-<link id="icon" href="img/tiankonguse.ico"" rel="icon" type="image/x-icon">
+<link href="img/tiankonguse.ico" rel="icon" type="image/x-icon">
+<link rel="shortcut" href="img/tiankonguse.ico" />
+<link rel="shortcut icon" href="img/tiankonguse.ico" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/common-fram.css" />
