@@ -31,16 +31,21 @@ $nowPage = 1;
 if (isset ( $_GET ['file'] ) && $_GET ['file'] != "") {
 	
 	$file = $_GET ['file'];
-	sscanf ( $file, "%4s-%s", $file_year, $file_month );
-	
+    if(preg_match('/^\d{4}-\d{1,2}$/',$file){
+        sscanf ( $file, "%4s-%s", $file_year, $file_month );
+    }else{
+        $file_year = $file_month = 0;
+    }
 	$file_year = intval($file_year);
 	$file_month = intval($file_month);
+
+	
 	
 	echo $file_year . "年" . $file_month . "月的记录列表：";
 	
 	if (isset ( $_GET ['nowPage'] ) && $_GET ['nowPage'] != "") {
 		// 这里需要验证$_GET['nowPage']是否合法
-		$nowPage = $_GET ['nowPage'];
+		$nowPage = intval($_GET ['nowPage']);
 	}
 	
 	if($file_year > 0 && $file_month > 0){
@@ -60,6 +65,7 @@ if (isset ( $_GET ['file'] ) && $_GET ['file'] != "") {
 		echo "发生意外情况，请稍后在访问<br/>";
 	}
 } else {
+		echo "发生意外情况，请稍后在访问<br/>";
 }
 ?>
 		</div>
