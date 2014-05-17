@@ -11,9 +11,9 @@ date_default_timezone_set('Asia/Shanghai');
  
 class MySQL{
 	var $host = "localhost"; 
-    var $userName = "tiankong_tksite";    
+    var $userName = "tiankong_site";    
     var $passWord = "4nMuNnZX";
-    var $database ="tiankong_tksite";
+    var $database ="tiankong_site";
     /* state 代表状态
      * 0   正常
      * 1   连接数据库失败
