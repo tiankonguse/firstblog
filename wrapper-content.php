@@ -16,7 +16,12 @@ $month_en = strftime ( "%b", mktime ( $hour, $min, $sec, $month, $day, $year ) )
 
 			<a href="blog.php?blogid=<?php echo  $blog->getKey(); ?>"
 				rel="bookmark" title="title" class="content-title" itemprop="name">
-				<h1><?php echo  $blog->getTitle(); ?></h1>
+                <?php if(strcmp($page,"index") == 0){ ?>
+                    <h2><?php echo  $blog->getTitle(); ?></h2>
+                <?php }else{ ?>
+                    <h1><?php echo  $blog->getTitle(); ?></h1>
+                <?php } ?>
+				
 			</a>
 
 		</div>
@@ -31,19 +36,11 @@ $month_en = strftime ( "%b", mktime ( $hour, $min, $sec, $month, $day, $year ) )
 				rel="author" title="author profile" itemprop="name"><?php echo  $blog->getUser(); ?> </a>
 
 			</li>
-			<li class="content-info-bottom-item">|<img src="img/icon-flord.gif"
-				alt="icon-flord" style="margin-bottom: -3px;"> <a href="#" title="#"
-				rel="category tag">category</a>
-			</li>
 			<li class="content-info-bottom-item">
 				<meta content="hblog.php?blogid=<?php echo  $blog->getKey(); ?>"
 					itemprop="url"> |<img src="img/icon-time.gif" alt="icon-time"
 				style="margin-bottom: -3px;"> <abbr itemprop="datePublished"><?php  echo  $blog->getDatetime(); ?></abbr>
 
-			</li>
-			<li class="content-info-bottom-item">|<img src="img/icon-comment.gif"
-				alt="icon-comment" style="margin-bottom: -3px;"> <a href="#"
-				title="#">0 Comments »</a>
 			</li>
 <?php   if(strcmp($page,"blog") == 0 && isset($_SESSION['tk_username']) && $_SESSION['tk_username'] != ""){	 ?>
 			<li class="content-info-bottom-item">|<a
@@ -74,8 +71,5 @@ $month_en = strftime ( "%b", mktime ( $hour, $min, $sec, $month, $day, $year ) )
 		
 	</div>
 <?php } ?>
-	<div class="post-footer">
-		Tags: <a href="#" rel="tag"></a>
-	</div>
 </div>
 <div class="wrapper-content-clear"></div>

@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
-
-<?php 
+<?php
 session_start(); 
+require("./inc/common.php");
 ?>
 <html lang="zh-cn">
 <head>
     <?php include_once("./inc/header.inc.php"); ?>
-    <?php include_once("plug_in/highlight.php"); ?>
     <?php include_once("plug_in/databaseHelp.php"); ?>
     <?php include_once("class/mySQLClass.php"); ?>
     <?php include_once("class/blogClass.php"); ?>
@@ -51,7 +50,7 @@ if (isset ( $_GET ['file'] ) && $_GET ['file'] != "") {
     if($file_year > 0 && $file_month > 0){
         $blogList = new BlogList ( BLOG_LIST_TYPE_FILE, $nowPage, $const_maxNum, $file );
         if ($blogList->state ()) {
-            echo "发生意外情况，请稍后在访问<br/>";
+            echo "已停止开发这个功能<br/>";
         } else {
             while ( $row = $blogList->Fetch () ) {
                 $blog = new Blog ( $row ['tk_blog_key'] );
@@ -62,10 +61,10 @@ if (isset ( $_GET ['file'] ) && $_GET ['file'] != "") {
             include_once ("pageManger.php");
         }
     }else{
-        echo "发生意外情况，请稍后在访问<br/>";
+        echo "已停止开发这个功能<br/>";
     }
 } else {
-    echo "发生意外情况，请稍后在访问<br/>";
+    echo "已停止开发这个功能<br/>";
 }
 ?>
         </div>

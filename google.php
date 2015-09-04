@@ -1,6 +1,9 @@
 
 <!DOCTYPE HTML>
-<?php session_start(); ?>
+<?php
+session_start(); 
+require("./inc/common.php");
+?>
 <html>
 
 <head>

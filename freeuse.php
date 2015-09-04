@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="zh-cn">
-<?php session_start(); ?>
+<?php
+session_start(); 
+require("./inc/common.php");
+?>
 <head>
 	<?php require_once("inc/header.inc.php"); ?>
 	<?php include_once("plug_in/databaseHelp.php"); ?>

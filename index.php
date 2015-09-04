@@ -1,12 +1,13 @@
-<?php session_start(); ?>
+<?php
+session_start(); 
+require("./inc/common.php");
+?>
 <!DOCTYPE HTML>
 <html lang="zh-cn">
 <head>
 	<?php require_once("inc/header.inc.php"); ?>
 	<title>tiankonguse'record</title>
 	<link href="css/main.css" rel="stylesheet">
-
-	<?php include_once("plug_in/highlight.php"); ?>
 	<?php include_once("plug_in/databaseHelp.php"); ?>
 	<?php include_once("class/mySQLClass.php"); ?>
 	<?php include_once("class/blogClass.php"); ?>

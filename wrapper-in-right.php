@@ -1,8 +1,6 @@
 <?php include_once("wait.php"); ?>
 
 <div id="wrapper-in-right" class="wrapper-in-right">
-
- <?php include_once("wrapper-in-right/wrapper-in-right-top.php"); ?>
 	
  <?php include_once("wrapper-in-right/wrapper-in-right-public.php"); ?>
 

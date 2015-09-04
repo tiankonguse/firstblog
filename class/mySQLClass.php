@@ -13,7 +13,7 @@ class MySQL{
 	var $host = "localhost"; 
     var $userName = "tiankong_site";    
     var $passWord = "4nMuNnZX";
-    var $database ="tiankong_site";
+    var $database ="tiankonguse_site";
     /* state 代表状态
      * 0   正常
      * 1   连接数据库失败

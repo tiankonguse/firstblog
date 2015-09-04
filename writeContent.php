@@ -1,13 +1,14 @@
-﻿
+﻿<?php
+session_start(); 
+require("./inc/common.php");
+?>
 <?php
-session_start ();
 if (! isset ( $_SESSION ['tk_username'] ) || $_SESSION ['tk_username'] == "") {
 	echo "<script language=\"javascript\" type=\"text/javascript\">";
 	echo "location.href=\"/\"";
 	echo "</script>";
 } else {
-	?>
-
+?>
 <!DOCTYPE HTML>
 <html>
 

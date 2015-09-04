@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
-
-<?php session_start(); ?>
-
+<?php
+session_start(); 
+require("./inc/common.php");
+?>
 <html>
 
 <head>
 	<?php include_once("head-meta.php"); ?>
-	<?php include_once("plug_in/highlight.php"); ?>
+    
 	<?php include_once("plug_in/databaseHelp.php"); ?>
 	<?php include_once("class/mySQLClass.php"); ?>
 	<?php include_once("class/blogClass.php"); ?>
