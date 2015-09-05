@@ -63,11 +63,20 @@ $month_en = strftime ( "%b", mktime ( $hour, $min, $sec, $month, $day, $year ) )
 		
 		<?php //index只显示一半，所以需要添加一个查看更多 ?>
 		<?php if(strcmp($page,"index") == 0){ ?>
-		<p>
-			<a href="blog.php?blogid=<?php echo  $blog->getKey(); ?>"
-				class="more-link">查看更多 »</a>
-		</p>	
-		<?php } ?>
+            <p>
+                <a href="blog.php?blogid=<?php echo  $blog->getKey(); ?>"
+                    class="more-link">查看更多 »</a>
+            </p>	
+        <?php }else{ ?>
+            <!-- 728 * 90 - firstblog -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-2326969899478823"
+                 data-ad-slot="9544970390"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+       <?php  } ?>
 		
 	</div>
 <?php } ?>
