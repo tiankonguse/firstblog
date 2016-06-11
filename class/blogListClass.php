@@ -1,6 +1,16 @@
 <?php
 /*
- * 博客列表需要显示为多页 为了便于管理，自己封装起来了。 1.支持多页管理 2.支持主页显示 3.支持博客列表 4.支持博客日期列表 5.支持分类列表 6.支持标签列表 要实现这些，有两个选择 （1）。分别写那几个函数，然后有个标示符来标示是那个列表 （2）。sql函数在调用者手中写 这里还是写函数实现吧。
+ * 博客列表需要显示为多页 为了便于管理，自己封装起来了。 
+ * 1.支持多页管理 
+ * 2.支持主页显示 
+ * 3.支持博客列表 
+ * 4.支持博客日期列表 
+ * 5.支持分类列表 
+ * 6.支持标签列表 
+ * 要实现这些，有两个选择 
+ *  （1）。分别写那几个函数，然后有个标示符来标示是那个列表 
+ *  （2）。sql函数在调用者手中写 
+ * 这里还是写函数实现吧。
  */
 define ( "BLOG_LIST_TYPE_NORMAL", 1 ); // 主页和博客列表
 define ( "BLOG_LIST_TYPE_FILE", 4 ); // file列表
@@ -26,7 +36,7 @@ class BlogList {
 	/*
 	 * 1:普通博客列表，也就是框架
 	 */
-	function BlogList($type = 1, $nowPage = 0, $countOfOnePage = 10, $file = " ") {
+	function __construct($type = 1, $nowPage = 0, $countOfOnePage = 10, $file = " ") {
 		$this->type = ( int ) ($type);
 		$this->file = $file;
 		$this->nowPage = ( int ) ($nowPage) - 1;

@@ -1,5 +1,8 @@
+<?php
+session_start(); 
+require("./inc/common.php");
+?>
 <!DOCTYPE HTML>
-<?php session_start(); ?>
 <html>
 
 <head>

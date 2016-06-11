@@ -8,7 +8,7 @@ class Blog {
 	var $content;
 	var $password = "";
 	var $category = "";
-	function Blog($key = "") {
+	function __construct($key = "") {
 		if ($key != "") {
 			$this->setBlog ( $key );
 		}

@@ -40,13 +40,18 @@ class MySQL{
     var $rowCount = -1;
 
 	
-     function MySQL () {
+     function __construct() {
         $this->state = 0;
     }
 	
 	/* 连接数据库操作  成功连接符 失败 false*/
     function Connect () {
-        return ($this->ResourceId = mysql_connect($this->host, $this->userName, $this->passWord)) ? ($this->SelectDB() ? $this->ResourceId : 0) : !($this->state = 1);
+        $this->ResourceId = mysql_connect($this->host, $this->userName, $this->passWord);
+        if($this->ResourceId){
+            return $this->SelectDB() ? $this->ResourceId : 0;
+        }else{
+            return !($this->state = 1);
+        }
     }
 
     
@@ -66,7 +71,7 @@ class MySQL{
     
 	/* 选择数据库操作  成功ture 失败 false*/
     function SelectDB () {
-		mysql_query("set names utf8");
+		mysql_query("set names utf8", $this->ResourceId);
         return mysql_select_db($this->database, $this->ResourceId) or !($this->state = 2);
     }
 
